@@ -66,7 +66,7 @@ f.Qsg = 0*f.tsg; % subglacial discharge on tsg
 % exponential profile with total surface area 200 km^2 = 2e8 m^2
 zc = cumsum(a.H0)-a.H0/2; % depth of centre of layers
 iceprofile = exp(-zc/100); % profile before scaling
-a.I0 = (2e8/sum(iceprofile))*iceprofile; % surface area profile used by FjordRPM (m^2)
+a.I0 = (1e8/sum(iceprofile))*iceprofile; % surface area profile used by FjordRPM (m^2)
 
 % run the model
 % p.plot_runtime = 1; % plot while simulation runs - fun but quite slow

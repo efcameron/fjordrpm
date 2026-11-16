@@ -8,7 +8,7 @@
 clear; close all;
 
 % put FjordRPM code on path - need to update to the location of your code
-path2sourcecode = '~/OneDrive - University of Edinburgh/fjordMIX/code/fjordrpm/';
+path2sourcecode = '~\Documents\MATLAB\fjordrpm';
 addpath(genpath(path2sourcecode));
 
 % get basic constants and default controlling parameters
@@ -85,7 +85,7 @@ s = run_model(p, t, f, a);
 save example1_subglacial_discharge.mat s p t f a
 
 % make an animation of the output (takes a few minutes)
-% animate(p,s,50,'example1_subglacial_discharge');
+%animate(p,s,50,'example1_subglacial_discharge');
 
 % make basic plots of the output
 plotrpm(p,s,50);
