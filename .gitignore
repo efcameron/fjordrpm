@@ -150,3 +150,23 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Local MATLAB outputs and working backups
+/example1_subglacial_discharge.mat
+/example1_subglacial_discharge.mp4
+/example3_icebergs.mat
+/example4_combined.mat
+/experiment2_subglacial_discharge.mat
+/experiment3_icebergs.mat
+/experiment4_combined.mat
+/experiment5_mankoff_subglacial_discharge.mat
+
+/experiments/example1_subglacial_discharge.mat
+/experiments/example3_icebergs.mat
+/experiments/experiment2_subglacial_discharge.mat
+/experiments/experiment3_icebergs.mat
+/experiments/experiment4_combined.mat
+/experiments/experiment5_mankoff_subglacial_discharge.mat
+/experiments/load_subglacial_discharge_staged_backup.mlx
+/experiments/load_subglacial_discharge_working_backup.mlx
+/experiments/plotting_scripts/matlab.mat
