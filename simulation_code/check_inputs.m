@@ -28,6 +28,16 @@ end
 if p.H<0
     error('p.H must be positive');
 end
+
+% horizontal position of the sill: distance from glacier front (m)
+% if not specified, the sill is at the fjord mouth (original behaviour)
+if ~isfield(p,"Gsill")
+    p.Gsill = p.L;
+end
+if p.Gsill <= 0 || p.Gsill > p.L
+    error('p.Gsill must be greater than 0 and no greater than p.L');
+end
+
 % check sum of layer thicknesses is equal to fjord depth
 if abs(sum(a.H0)-p.H) > 1e-10
     error('Layer thicknesses (a.H0) must sum to fjord depth (p.H)');
