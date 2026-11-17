@@ -38,6 +38,10 @@ if p.Gsill <= 0 || p.Gsill > p.L
     error('p.Gsill must be greater than 0 and no greater than p.L');
 end
 
+if p.sill==0 && p.Gsill ~= p.L
+    warning('p.Gsill is ignored when p.sill=0 (no sill)');
+end
+
 % check sum of layer thicknesses is equal to fjord depth
 if abs(sum(a.H0)-p.H) > 1e-10
     error('Layer thicknesses (a.H0) must sum to fjord depth (p.H)');
