@@ -57,8 +57,15 @@ elseif p.sill==1
     s.ksill = inds_above(end);
 end
 
+% layer lengths: layers above the sill span the full fjord length p.L,
+% layers below the sill exist only between the glacier and the sill
+s.Llay = p.L*ones(p.N,1);
+if p.sill==1
+    s.Llay(s.ksill+1:end) = p.Gsill;
+end
+
 % resulting layer volumes
-s.V = s.H*p.W*p.L;
+s.V = s.H*p.W.*s.Llay;
 
 % layer centres (useful to have at various points in the code)
 ints = -[0;cumsum(s.H)];
