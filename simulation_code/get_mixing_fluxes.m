@@ -33,9 +33,13 @@ Ri(Ri<0) = 0;
 % get diffusivity as a function of the Richardson number
 Kz = p.Kb + (Ri<p.Ri0 & Ri>0)*p.K0.*(1-(Ri/p.Ri0).^2).^3;
 
+% length of each layer interface is assigned as the
+% shorter of the two layer lengths
+Lint = min(s.Llay(1:end-1), s.Llay(2:end));
+
 % compute the mixing fluxes going in/out of each layer.
-QS = 2*p.W*p.L*Kz.*(S0(2:end)-S0(1:end-1))./(H0(2:end)+H0(1:end-1));
-QT = 2*p.W*p.L*Kz.*(T0(2:end)-T0(1:end-1))./(H0(2:end)+H0(1:end-1));
+QS = 2*p.W*Lint.*Kz.*(S0(2:end)-S0(1:end-1))./(H0(2:end)+H0(1:end-1));
+QT = 2*p.W*Lint.*Kz.*(T0(2:end)-T0(1:end-1))./(H0(2:end)+H0(1:end-1));
 
 % the final layer fluxes are the net of the interface fluxes
 QTk0 = [QT;0]-[0;QT];
