@@ -170,3 +170,8 @@ dmypy.json
 /experiments/load_subglacial_discharge_staged_backup.mlx
 /experiments/load_subglacial_discharge_working_backup.mlx
 /experiments/plotting_scripts/matlab.mat
+
+# Hypsometry tests: outputs are kept outside the repo (fjordrpm_runs/results, /figures)
+tests/**/*.mat
+tests/**/*.fig
+tests/**/*.png
