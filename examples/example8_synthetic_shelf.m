@@ -94,6 +94,6 @@ Gsill_list = [60e3, 30e3, 15e3];
 for n = 1:length(Gsill_list)
     p.Gsill = Gsill_list(n);
     s = run_model(p, t, f, a);
-    save(['C:/Users/efc4/Documents/MATLAB/fjordrpm_runs/example8_Gsill' num2str(Gsill_list(n)/1e3) 'km.mat'], 's', 'p', 't', 'f', 'a');
+    save(['C:/Users/efc4/Documents/MATLAB/fjordrpm_runs/results/example8_Gsill' num2str(Gsill_list(n)/1e3) 'km.mat'], 's', 'p', 't', 'f', 'a');
 end
 
